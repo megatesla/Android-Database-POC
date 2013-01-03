@@ -27,33 +27,35 @@ public class StudentDataProvider extends ContentProvider
 	}
 
 	/**
-	 * @param
-	 * @param
-	 * @param
-	 * @param
-	 * @param
-	 * @return
+	 * This method is called when a client calls {@link android.content.ContentResolver#query(Uri, String[], String, String[], String)}.
+	 * Queries the database and returns a cursor containing the results.
+	 * 
+	 * @return A cursor containing the results of the query. The cursor exists but is empty if the query returns no results or an exception occurs.
+	 * @throws IllegalArgumentException if the incoming URI pattern is invalid.
 	 */
 	@Override
 	public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-		
+		SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+		qb.setTables();
 	}
 	
 	/**
-	 * @param
-	 * @param
-	 * @param
-	 * @return
+	 * This is called when a client calls
+	 * {@link android.content.ContentResolver#insert(Uri, ContentValues)}.
+	 * Inserts a new row into the database. If rows were inserted, then listeners are notified of the change.
+	 * @return The row ID of the inserted row.
+	 * @throws SQLException if the insertion fails.
 	 */
 	public Uri insert(Uri uri, ContentValues initialValues) {
 		
 	}
 	
 	/**
-	 * @param
-	 * @param
-	 * @param
-	 * @return
+	 * This is called when the client calls
+	 * {@link anroid.content.ContentResolver#delete(Uri, String, String[])}.
+	 * Deletes records from the database.
+	 * @return The number of rows deleted is returned.
+	 * @throws IllegalArgumentException if the incoming URI pattern is invalid.
 	 */
 	public int delete(Uri uri, String where, String[] whereArgs) {
 		
